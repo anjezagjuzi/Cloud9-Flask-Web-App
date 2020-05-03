@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 4px solid #ccc;
+  background-color: #5e5a4f;
+  width: 10%;
+  height: 900px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 10px;
+  border: 4px solid #ccc;
+  width: 85%;
+  border-left: none;
+  height: 900px;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+</head>
+<body>
+
+<center><h1 style="red serifs">Online Learning Platform - Python Course</h1></center> 
+
+<!-- -----------------Time------------------------------ -->
+
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
+  </head>
+  
+  <body onload="startTime()">
+  
+  <div id="txt"></div>
+
+  <!-- --------------Time--------------------------------- -->
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Introduction')" id="defaultOpen">Introduction</button>
+  <button class="tablinks" onclick="openCity(event, 'Syntax')">Syntax</button>
+  <button class="tablinks" onclick="openCity(event, 'Comments')">Comments</button>
+  <button class="tablinks" onclick="openCity(event, 'Variables')">Variables</button>
+  <button class="tablinks" onclick="openCity(event, 'DataTypes')">Data Types</button>
+  <button class="tablinks" onclick="openCity(event, 'Numbers')">Numbers</button>
+  <button class="tablinks" onclick="openCity(event, 'Strings')">Strings</button>
+  <button class="tablinks" onclick="openCity(event, 'Booleans')">Booleans</button>
+  <button class="tablinks" onclick="openCity(event, 'Operators')">Operators</button>
+  <button class="tablinks" onclick="openCity(event, 'Tuple')">Tuple</button>
+  <button class="tablinks" onclick="openCity(event, 'If..Else')">If..Else</button>
+  <button class="tablinks" onclick="openCity(event, 'WhileLoops')">While Loops</button>
+  <button class="tablinks" onclick="openCity(event, 'ForLoops')">For Loops</button>
+  <button class="tablinks" onclick="openCity(event, 'Functions')">Functions</button>
+  <button class="tablinks" onclick="openCity(event, 'Lambda')">Lambda</button>
+  <button class="tablinks" onclick="openCity(event, 'Class')">Class</button>
+  <button class="tablinks" onclick="openCity(event, 'ExternalLinks')">External Links</button>
+  <button class="tablinks" onclick="openCity(event, 'ContactMe')">Contact Me</button>
+
+
+</div>
+
+<div id="Introduction" class="tabcontent">
+  <h3>Introdcution</h3>
+  <ul style="background-color:lightseagreen;"><br><li>Python is a programming Language</li><br><li> Python can be used on server side to develop web applications</li><br> <li>Python can be connected to Database and cloud platforms</li><br><li>Syntax is very easy to understand</li><br></ul>
+  <h3>About Python</h3>
+  <ol style="background-color:lightblue;"><br><li> Python was developed by Guido van Rossum and released in 1991</li><br><li>It Can be used in Machine Learning, Airtificial Intelligence and Deep Learning</li><br></ol> 
+  <h3>Why Python</h3>
+  <ul style="background-color:lightseagreen;"><br><li> Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc)</li><br><li>Python has a simple syntax similar to the English language.</li><br><li> Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li><br></ul>
+  <h3>More..</h3>
+  <ol style="background-color:lightblue;"><br><li>The latest version of Python is Python3</li><br><li>Some important IDEs are Spyder, Thonny, Pycharm, Netbeans or Eclipse</li><br><li>IDE Spyder can be downloaded from https://www.spyder-ide.org/</li><br></ol> 
+</div>
+
+
+<div id="Syntax" class="tabcontent">
+  <h3>Syntax</h3>
+  <ul style="background-color:lightseagreen;"><br></li>>>> print("Hello World")</li><br</ul>
+  <h3>Ouput</h3>
+  <ol style="background-color:lightblue;"><br><li>Hello World</li><br></ol> 
+  <h3>Example 2:</h3>
+  <ul style="background-color:lightseagreen;"><br></li>>>> if 10 < 5:<br>>>> print("Ten is greater than 5")</li><br</ul>
+  <h3>Ouput</h3>
+  <ol style="background-color:lightblue;"><br><li>Ten is greater than 5</li><br></ol> 
+</div>
+
+
+<div id="Comments" class="tabcontent">
+  <h3>Comments</h3>
+  <ul style="background-color:lightseagreen;"><br><li>Comments can be used to explain Pthon code</li><br><li>Comments can be used to make the code more readable.</li><br> <li>Comments can be used to prevent execution when testing code.</li><br></ul>
+  <h3>Example 1</h3>
+  <p style="background-color:lightblue;"><br>>>> #This is a comment<br>>>> print("Hello, World!")<br><br></p>
+  <h3>Output 1</h3>
+  <p style="background-color:lightseagreen;"><br>Hello World<br><br></p>
+  <h3>Example 2</h3>
+  <p style="background-color:lightblue;"><br>>>> #This is a comment<br>>>> #written in more than just one line<br>>>> print("Hello World")<br><br></p>
+  <h3>Output 2</h3>
+  <p style="background-color:lightblue;"><br>Hello World<br><br></p> 
+</div>
+
+
+<div id="Variables" class="tabcontent">
+  <h3>Variables</h3>
+  <ul style="background-color:lightseagreen;"><br><li>Variables are containers for storing data values.</li><br><li>Unlike other programming languages, Python has no command for declaring a variable.</li><br> <li>A variable is created the moment you first assign a value to it.</li><br></ul>
+  <h3>Example 1</h3>
+  <p style="background-color:lightblue;"><br>>>>  x = 5<br>>>>  y = "John"<br>>>>  print(x)<br>>>> print(y) <br><br></p>
+  <h3>Output 1</h3>
+  <p style="background-color:lightseagreen;"><br>5<br><br>John<br><br></p>
+  <h3>Example 2</h3>
+  <p style="background-color:lightblue;"><br>>>>  x = 4 # x is of type int<br>>>> # x is of type int x = "Sally" # x is now of type str<br>>>> print("x")<br><br></p>
+  <h3>Output 2</h3>
+  <p style="background-color:lightblue;"><br>Sally<br><br></p> 
+</div>
+
+
+<div id="DataTypes" class="tabcontent">
+  <table>
+    <tr>
+      <th>Data Types</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Text Types:</td>
+      <td>Str</td>
+    </tr>
+    <tr>
+      <td>Numeric Types</td>
+      <td>int, float, complex</td>
+    </tr>
+    <tr>
+      <td>Sequence Types</td>
+      <td>list, tuple, range</td>
+    </tr>
+    <tr>
+      <td>Mapping Type</td>
+      <td>dict</td>
+    </tr>
+    <tr>
+      <td>Set Types</td>
+      <td>Set, frozenset</td>
+    </tr>
+    <tr>
+      <td>Boolean Type</td>
+      <td>bool</td>
+    </tr>
+  </table>
+</div>
+
+
+<div id="Numbers" class="tabcontent">
+  <h3>Numbers</h3>
+  <ul style="background-color:lightseagreen;"><br><li>int</li><br><li>float</li><br> <li>complex</li><br></ul>
+  <h3>Example 1</h3>
+  <p style="background-color:lightblue;"><br>>>>  x = 1    # int<br>>>> y = 2.8  # float<br>>>> z = x + y <br> print(z)<br><br></p>
+  <h3>Output 1</h3>
+  <p style="background-color:lightseagreen;"><br>3.8<br><br></p>
+</div>
+
+
+<div id="Strings" class="tabcontent">
+  <h3>Strings</h3>
+  <ul style="background-color:lightseagreen;"><br><li>String literals in python are surrounded by either single quotation marks, or double quotation marks.</li><br><li>You can display a string literal with the print() function:</li><br></ul>
+  <h3>Example 1</h3>
+  <p style="background-color:lightblue;"><br>>>>  a = "Hello"<br>>>> print(a)<br><br></p>
+  <h3>Output 1</h3>
+  <p style="background-color:lightseagreen;"><br>Hello<br><br></p>
+  <h3>Example 2</h3>
+  <p style="background-color:lightblue;"><br>>>> a = 'This is a learning portal'<br>>>> print(a)<br><br></p>
+  <h3>Output 2</h3>
+  <p style="background-color:lightblue;"><br>This is a learning portal<br><br></p> 
+</div>
+
+<div id="Booleans" class="tabcontent">
+  <h3>Booleans</h3>
+  <ul style="background-color:lightseagreen;"><br><li>Booleans represent one of two values: True or False.</li><br></ul>
+  <h3>Example 1</h3>
+  <p style="background-color:lightblue;"><br>>>>  print(10 == 9)<br><br></p>
+  <h3>Output 1</h3>
+  <p style="background-color:lightseagreen;"><br>False<br><br></p> 
+</div>
+
+<div id="Operators" class="tabcontent">
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Arithmetic Operator</td>
+      <td>+ Addition</td>
+      <td>Adds values on either side of the operator.</td>
+    </tr>
+    <tr>
+      <td>Arithmetic Operator</td>
+      <td>+ Substraction</td>
+      <td>Subtracts right hand operand from left hand operand.</td>
+    </tr>
+    <tr>
+      <td>Arithmetic Operator</td>
+      <td>* Multiplication</td>
+      <td>Multiplies values on either side of the operator.</td>
+    </tr>
+    <tr>
+      <td>Arithmetic Operator</td>
+      <td>/ Division</td>
+      <td>Divides left hand operand by right hand operand.</td>
+    </tr>
+    <tr>
+      <td>Arithmetic Operator</td>
+      <td>% Modulus</td>
+      <td>Divides left hand operand by right hand operand and returns remainder.</td>
+    </tr>
+    <tr>
+      <td>Comparison Operator</td>
+      <td>==</td>
+      <td>If the values of two operands are equal, then the condition becomes true.</td>
+    </tr>
+        <tr>
+      <td>Comparison Operator</td>
+      <td>!=</td>
+      <td>If values of two operands are not equal, then condition becomes true.</td>
+    </tr>
+  </table>
+</div>
+
+<div id="Variables" class="tabcontent">
+  <h3>Variable</h3>
+  <p>Variables are containers for storing data values.</p>
+</div>
+
+
+<div id="ContactMe" class="tabcontent" action="/output.txt" method="POST">
+  <h3>Contact Me</h3>
+  <ul style="background-color:lightseagreen;"><br>
+  <form>
+      <label for="fname" >First Name</label>
+      <input type="textfield" id="fname" name="firstname" placeholder="First name.." style="background-color:lightblue;">
+      <br>
+    
+      <label for="lname">Last Name</label>
+      <input type="textfield" id="lname" name="lastname" placeholder="Last name.." style="background-color:lightblue;">
+      <br>
+    
+      <label for="country">Country</label>
+      <select id="country" name="country" style="background-color:lightblue;">
+        <option value="usa">USA</option>
+        <option value="germany">Germany</option>
+        <option value="uk">United Kingdom</option>
+        <option value="china">China</option>
+        <option value="india">India</option>
+      </select>
+      <br>
+    
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Subject of contact.." style="height:100px; width:900px; background-color:lightblue;"></textarea>
+      <br>
+      <br>
+    
+      <button type="submit">Submit form</button>
+      <button type="reset">Reset information</button>
+  </form>
+</div>
+
+
+<div id="ExternalLinks" class="tabcontent">
+  <h3>External Links</h3>
+  <p>  <nav>
+    <a href="https://www.tutorialspoint.com/python/index.htm">Python</a> |
+    <a href="https://www.tutorialspoint.com/html/index.htm">HTML</a> |
+    <a href="https://www.tutorialspoint.com/css/index.htm">CSS</a> |
+    <a href="https://www.tutorialspoint.com/javascript/index.htm">JavaScript</a> |
+    <br>
+    <br>
+    <br>
+    <img src= "python.png" width="60" height="70" />
+    <img src= "HTML5.png" width="60" height="70" />
+    <img src= "CSS3.png" width="60" height="70" />
+    <img src= "JS.png" width="60" height="70" />
+  </nav> </p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
